@@ -1261,10 +1261,24 @@ textarea{min-height:150px;resize:vertical}
 @media (max-width:768px){
   .footer-main{
     align-items:center;
+    flex-direction:column;
+    text-align:center;
   }
   .footer-contact{
     align-items:center;
     text-align:center;
+  }
+  .footer-logo{
+    margin:0 auto;
+  }
+}
+
+@media (max-width:768px){
+  .footer-main{
+    flex-direction:column;
+  }
+  .footer-logo{
+    margin:0 auto;
   }
 }
 
