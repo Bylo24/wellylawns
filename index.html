@@ -714,9 +714,22 @@ ul{list-style:none}
   gap:var(--grid-gap);
 }
 
+/* Center how-it-works cards without forcing a fourth column */
+#how-it-works .services-grid{
+  justify-content:center;
+  justify-items:center;
+  text-align:center;
+}
+#how-it-works .service-content{
+  text-align:center;
+}
+
 @media (min-width:1200px){
   .services-grid{
     grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+  #how-it-works .services-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
   }
 }
 
@@ -2120,7 +2133,7 @@ textarea{min-height:150px;resize:vertical}
         <p class="fade-up delay-2">Our bread and butter is lawn mowing, but we also keep gardens thriving and hedges looking sharp — with green waste removed.</p>
       </div>
 
-      <div class="services-grid">
+      <div class="services-grid how-it-works-grid">
         <!-- Lawn Mowing -->
         <article class="service-card grass-strip fade-up delay-1">
           <div class="service-image">
@@ -2305,7 +2318,7 @@ textarea{min-height:150px;resize:vertical}
         <h2 class="fade-up delay-1">Simple from start to finish</h2>
       </div>
 
-      <div class="services-grid">
+      <div class="services-grid how-it-works-grid">
         <article class="service-card feature-card step-card slide-right delay-1">
           <div class="service-content">
             <span class="step-badge">1</span>
