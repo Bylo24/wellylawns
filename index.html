@@ -1273,15 +1273,6 @@ textarea{min-height:150px;resize:vertical}
   }
 }
 
-@media (max-width:768px){
-  .footer-main{
-    flex-direction:column;
-  }
-  .footer-logo{
-    margin:0 auto;
-  }
-}
-
 .map-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -1670,6 +1661,18 @@ textarea{min-height:150px;resize:vertical}
     overscroll-behavior:none;
     text-align:center;
   }
+  .nav-menu-logo{
+    margin-top:auto;
+    padding-top:24px;
+    border-top:1px solid rgba(0,0,0,.06);
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+  .nav-menu-logo img{
+    max-width:170px;
+    height:auto;
+  }
   .nav-menu.active{transform:translateX(0)}
   .nav-link{font-size:1.08rem; padding:12px 4px;}
   .nav-menu-close{
@@ -1981,6 +1984,9 @@ textarea{min-height:150px;resize:vertical}
           Get a Free Quote
         </a>
       </li>
+      <li class="nav-menu-logo" aria-hidden="true">
+        <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
+      </li>
     </ul>
 
     <div class="nav-cta">
@@ -2142,26 +2148,45 @@ textarea{min-height:150px;resize:vertical}
           </div>
         </article>
 
-        <!-- Hedges -->
-        <article class="service-card grass-strip fade-up delay-3">
-          <div class="service-image">
-            <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Hedges-Wellylawns.jpg" alt="Hedge trimming service">
-            <div class="service-overlay"></div>
-          </div>
-          <div class="service-content">
-            <h3>Hedge Trimming &amp; Trees</h3>
-            <div class="service-tagline">Neat shapes, healthier growth, less mess.</div>
-            <ul class="service-list">
-              <li><i class="fas fa-check" aria-hidden="true"></i> Hedges of all sizes</li>
-              <li><i class="fas fa-check" aria-hidden="true"></i> Tree work (as needed)</li>
-              <li><i class="fas fa-check" aria-hidden="true"></i> Green waste removal</li>
-            </ul>
-            <a class="service-cta" href="#quote-form">Get a quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
+      <!-- Hedges -->
+      <article class="service-card grass-strip fade-up delay-3">
+        <div class="service-image">
+          <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Hedges-Wellylawns.jpg" alt="Hedge trimming service">
+          <div class="service-overlay"></div>
+        </div>
+        <div class="service-content">
+          <h3>Hedge Trimming &amp; Trees</h3>
+          <div class="service-tagline">Neat shapes, healthier growth, less mess.</div>
+          <ul class="service-list">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Hedges of all sizes</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Tree work (as needed)</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Green waste removal</li>
+          </ul>
+          <a class="service-cta" href="#quote-form">Get a quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <article class="service-card grass-strip fade-up delay-4">
+        <div class="service-content">
+          <h3>Additional Services</h3>
+          <div class="service-tagline">Extra care for every exterior surface.</div>
+          <ul class="service-list">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Lawn mowing &amp; tidy-ups</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Gardening care, weeding &amp; pruning</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Hedge trimming &amp; tree maintenance</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Rubbish removal &amp; green waste haulage</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Roof washing to clear dirt, moss &amp; mould</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Roof treatment to protect and seal</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Exterior house wash for cladding &amp; weatherboards</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Gutter cleaning &amp; debris clearing</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Pressure washing paths, concrete, fences &amp; driveways</li>
+          </ul>
+          <a class="service-cta" href="#quote-form">Book it today <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
       </div>
 
-      <div class="section-footer fade-up delay-4">
+      <div class="section-footer fade-up delay-5">
         <div class="section-footer-inner">
           <img class="section-footer-logo" src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
           <div class="section-footer-details">
@@ -2201,8 +2226,8 @@ textarea{min-height:150px;resize:vertical}
           <div class="about-card-icon">
             <i class="fas fa-map-pin"></i>
           </div>
-          <h3>Based in Porirua</h3>
-          <p>Working across Porirua &amp; Greater Wellington with deep local knowledge and fast response times.</p>
+          <h3>Based in Wellington</h3>
+          <p>Serving the Wellington region — Porirua, Lower Hutt, Upper Hutt &amp; Wellington City — with local knowledge and fast responses.</p>
         </div>
 
         <div class="about-card">
