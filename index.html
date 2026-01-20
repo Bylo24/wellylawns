@@ -714,6 +714,12 @@ ul{list-style:none}
   gap:var(--grid-gap);
 }
 
+@media (min-width:1200px){
+  .services-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+}
+
 .service-card{
   background:var(--card);
   border:1px solid var(--border);
@@ -2174,9 +2180,6 @@ textarea{min-height:150px;resize:vertical}
           <h3>Additional Services</h3>
           <div class="service-tagline">Extra care for every exterior surface.</div>
           <ul class="service-list">
-            <li><i class="fas fa-check" aria-hidden="true"></i> Lawn mowing &amp; tidy-ups</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Gardening care, weeding &amp; pruning</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Hedge trimming &amp; tree maintenance</li>
             <li><i class="fas fa-check" aria-hidden="true"></i> Rubbish removal &amp; green waste haulage</li>
             <li><i class="fas fa-check" aria-hidden="true"></i> Roof washing to clear dirt, moss &amp; mould</li>
             <li><i class="fas fa-check" aria-hidden="true"></i> Roof treatment to protect and seal</li>
