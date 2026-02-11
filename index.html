@@ -1297,22 +1297,36 @@ textarea{min-height:150px;resize:vertical}
   gap:18px;
   flex-wrap:wrap;
   font-size:.85rem;
-  color:rgba(255,255,255,.6);
-  justify-content:center;
+  color:rgba(255,255,255,.45);
+  justify-content:flex-start;
   text-align:center;
 }
 .footer-note small{
   display:block;
 }
+.footer-credit{
+  width:100%;
+  text-align:left;
+}
 .footer-credit a{
-  color:rgba(255,255,255,.7);
+  color:rgba(255,255,255,.45);
   text-transform:uppercase;
   letter-spacing:.18em;
-  font-size:.8rem;
+  font-size:.78rem;
+  font-weight:400;
   transition:color var(--transition);
 }
 .footer-credit a:hover{
-  color:#fff;
+  color:rgba(255,255,255,.75);
+}
+
+@media (min-width:768px){
+  .footer-note{
+    justify-content:center;
+  }
+  .footer-credit{
+    text-align:center;
+  }
 }
 
 @media (max-width:768px){
