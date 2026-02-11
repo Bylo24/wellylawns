@@ -4,15 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Welly Lawns & Gardens | Lawns & Outdoor Care Porirua & Wellington</title>
-<meta name="description" content="Reliable lawn mowing, gardening, hedge trimming, rubbish removal and exterior cleaning across Porirua & Wellington. Honest, local outdoor care." />
+<title>Welly Lawns & Gardens | Lawns & Outdoor Care Porirua, Wellington, Lower Hutt & Upper Hutt</title>
+<meta name="description" content="Reliable lawn mowing, gardening, hedge trimming, rubbish removal and exterior cleaning across Porirua, Wellington, Lower Hutt & Upper Hutt. Honest, local outdoor care." />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Welly Lawns & Gardens",
-  "image": "assets/images/logo.png",
+  "image": "https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png",
   "telephone": "+642041230001",
   "email": "wellylawns@gmail.com",
   "areaServed": "Porirua, Wellington, Lower Hutt, Upper Hutt",
@@ -59,7 +59,6 @@
 }
 </script>
 
-<link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -71,21 +70,21 @@
    MODERN AESTHETIC SYSTEM
 ========================= */
 :root{
-  --primary:#2d5a27;
-  --primary-dark:#1e3d1a;
-  --secondary:#1e3d1a;
+  --primary:#1f4f1f;
+  --primary-dark:#13300f;
+  --secondary:#0d2f10;
   --cta-primary:#8fe55a;
   --cta-primary-dark:#63c22f;
   --cta-light:#dff7bf;
 
-  --ink:#121212;
-  --text:#2b2b2b;
-  --muted:#6b7280;
+  --ink:#0d2108;
+  --text:#050505;
+  --muted:#050505;
 
-  --bg:#f1ffe0;
-  --soft:#f1ffe0;
-  --card:#f8ffe9;
-  --border:rgba(17,24,39,.10);
+  --bg:#d5ff8a;
+  --soft:#d5ff8a;
+  --card:#ffffff;
+  --border:rgba(13,43,16,.12);
 
   --radius-sm:12px;
   --radius-md:18px;
@@ -103,17 +102,18 @@
 
   --container:1200px;
 
-  --nav-h:80px;
+  --nav-h:120px;
   --section-y:88px;
 
   --grid-gap:34px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:120px;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 18px);overflow-x:hidden}
 body{
   font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   line-height:1.65;
+  font-weight:700;
   color:var(--text);
   background:var(--bg);
   -webkit-font-smoothing:antialiased;
@@ -121,11 +121,24 @@ body{
   overflow-x:hidden;
   padding-bottom:96px;
 }
+body.menu-open{
+  overflow:hidden;
+  height:100vh;
+}
+body.menu-open .sticky-cta{
+  transform:translateY(100%);
+  opacity:0;
+  pointer-events:none;
+}
 #contact{
   scroll-margin-top:calc(var(--nav-h) + 16px);
 }
 #quote-form{
   scroll-margin-top:calc(var(--nav-h) + 16px);
+}
+a, p, span, li, label, small, input, textarea, button{
+  color:var(--text);
+  font-weight:700;
 }
 h1,h2,h3{
   font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -170,6 +183,54 @@ ul{list-style:none}
   margin:12px auto 0;
   color:var(--muted);
   font-size:1.05rem;
+}
+
+.section-footer{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+}
+.section-footer-inner{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:18px 22px;
+  border-radius:var(--radius-full);
+  background:var(--card);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-1);
+}
+.section-footer-logo{
+  width:120px;
+  height:auto;
+}
+.section-footer-details{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  font-weight:700;
+  color:var(--ink);
+  font-size:.95rem;
+}
+.section-footer-details a{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:inherit;
+}
+.section-footer-details i{
+  color:var(--primary);
+}
+@media (max-width:768px){
+  .section-footer-inner{
+    flex-direction:column;
+    text-align:center;
+    border-radius:var(--radius-lg);
+  }
+  .section-footer-details{
+    flex-direction:column;
+    gap:10px;
+  }
 }
 
 /* Focus styles */
@@ -369,39 +430,44 @@ ul{list-style:none}
   position:sticky;
   top:0;
   z-index:1000;
-  background:var(--bg);
+  background:linear-gradient(135deg,var(--cta-primary),var(--cta-primary-dark));
   backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(0,0,0,.08);
+  border-bottom:0;
   transition:all 0.3s var(--ease);
   box-shadow:0 2px 12px rgba(0,0,0,0);
+  display:flex;
+  align-items:center;
+  height:auto;
+  overflow:visible;
+  padding:calc(8px + env(safe-area-inset-top)) 16px 8px;
 }
 .navbar.scrolled{
-  background:var(--bg);
+  background:linear-gradient(135deg,var(--cta-primary),var(--cta-primary-dark));
   box-shadow:0 4px 20px rgba(0,0,0,.08);
 }
 .navbar .container{
-  height:var(--nav-h);
+  padding:0;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:16px;
+  position:relative;
 }
 
 .logo{
+  position:relative;
   display:flex;
   align-items:center;
   min-width:0;
+  margin-bottom:0;
 }
 .logo img{
-  height:56px;
+  height:160px;
   width:auto;
-  max-width:320px;
+  display:block;
   object-fit:contain;
-  filter:drop-shadow(0 10px 24px rgba(0,0,0,.10));
+  filter:drop-shadow(0 14px 30px rgba(0,0,0,.15));
   transition: transform 0.3s var(--ease);
-}
-.logo:hover img {
-  transform: scale(1.02);
 }
 
 /* Desktop nav */
@@ -410,12 +476,15 @@ ul{list-style:none}
   gap:30px;
   align-items:center;
 }
+.nav-menu-logo{
+  display:none;
+}
 .nav-menu-close{
   display:none;
 }
 .nav-link{
   font-weight:700;
-  color:rgba(18,18,18,.86);
+  color:#0b1f0b;
   position:relative;
   padding:10px 6px;
   transition: color 0.3s var(--ease);
@@ -429,11 +498,11 @@ ul{list-style:none}
   width:0;
   height:3px;
   border-radius:999px;
-  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  background:linear-gradient(90deg,var(--cta-primary-dark),var(--primary));
   transition:width var(--transition);
 }
 .nav-link:hover::after{width:100%}
-.nav-link:hover{color:rgba(18,18,18,1)}
+.nav-link:hover{color:#081607}
 
 .nav-cta{
   display:flex;
@@ -450,16 +519,16 @@ ul{list-style:none}
   color:#fff;
   font-weight:900;
   letter-spacing:.02em;
-  background:linear-gradient(135deg,var(--primary-dark),var(--secondary));
+  background:linear-gradient(135deg,var(--primary),var(--cta-primary-dark));
   border:1px solid rgba(255,255,255,.7);
-  box-shadow:0 18px 60px rgba(0,0,0,.24);
+  box-shadow:0 18px 60px rgba(99,194,47,.28);
   transition:transform var(--transition), box-shadow var(--transition), filter var(--transition);
   font-size:1rem;
   min-height:44px;
 }
 .call-now:hover{
   transform:translateY(-2px);
-  box-shadow:0 22px 74px rgba(45,90,39,.30);
+  box-shadow:0 22px 74px rgba(99,194,47,.30);
   filter:saturate(1.05);
 }
 
@@ -471,6 +540,15 @@ ul{list-style:none}
   display:inline-flex;
   align-items:center;
   gap:10px;
+}
+.nav-cta .btn-primary{
+  border:2px solid #fff;
+  outline: 2px solid transparent;
+  outline-offset:4px;
+  transition:transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.nav-cta .btn-primary:focus-visible{
+  outline-color:#fff;
 }
 
 @media (max-width:980px){
@@ -547,17 +625,18 @@ ul{list-style:none}
 .hero-bg{
   position:absolute;
   inset:0;
-  background:url("assets/images/hero.jpg") center/cover no-repeat;
+  background:url("https://wellylawns.co.nz/wp-content/uploads/2025/05/Wellylawns-Hero-Image.jpg") center/cover no-repeat;
   transform:scale(1.04);
   will-change: transform;
+  backface-visibility:hidden;
 }
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(1000px 600px at 20% 25%, rgba(45,90,39,.12), transparent 60%),
-    linear-gradient(135deg, rgba(30,61,26,.92), rgba(0,0,0,.62));
-}
+  .hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(1000px 500px at 20% 25%, rgba(0,0,0,.45), transparent 60%),
+      linear-gradient(135deg, rgba(4,12,4,.95), rgba(2,8,4,.55));
+  }
 .hero .container{position:relative; z-index:2}
 
 .hero-content{
@@ -654,6 +733,25 @@ ul{list-style:none}
   gap:var(--grid-gap);
 }
 
+/* Center how-it-works cards without forcing a fourth column */
+#how-it-works .services-grid{
+  justify-content:center;
+  justify-items:center;
+  text-align:center;
+}
+#how-it-works .service-content{
+  text-align:center;
+}
+
+@media (min-width:1200px){
+  .services-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+  #how-it-works .services-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
 .service-card{
   background:var(--card);
   border:1px solid var(--border);
@@ -661,6 +759,23 @@ ul{list-style:none}
   overflow:hidden;
   box-shadow:0 8px 24px rgba(0,0,0,.06);
   transition:transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.grass-strip{
+  position:relative;
+  overflow:hidden;
+}
+.grass-strip::before{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:26px;
+  background-image:url("https://cdn.creazilla.com/cliparts/63893/grass-clipart-lg.png");
+  background-repeat:repeat-x;
+  background-position:left bottom;
+  background-size:auto 26px;
+  pointer-events:none;
 }
 .service-card:hover{
   transform:translateY(-8px);
@@ -696,10 +811,12 @@ ul{list-style:none}
   padding:32px 30px 34px;
 }
 
-/* Feature cards (Why Us / How It Works) */
 .feature-card{
   background:var(--card);
   border-radius:24px;
+  border:1px solid rgba(13,43,16,.18);
+  box-shadow:var(--shadow-1);
+  color:var(--ink);
 }
 .feature-card .service-content{
   padding:26px 24px 28px;
@@ -707,6 +824,7 @@ ul{list-style:none}
 .feature-card h3{
   font-size:1.3rem;
   margin-bottom:6px;
+  color:var(--ink);
 }
 .feature-icon{
   width:42px;
@@ -716,8 +834,8 @@ ul{list-style:none}
   align-items:center;
   justify-content:center;
   margin-bottom:14px;
-  background:rgba(45,90,39,.08);
-  color:var(--primary);
+  background:rgba(143,229,90,.18);
+  color:#164014;
   font-size:1.2rem;
 }
 .feature-card p{
@@ -748,7 +866,7 @@ ul{list-style:none}
 .step-card:hover{
   transform:translateY(-6px);
   box-shadow:var(--shadow-1);
-  border-color:rgba(45,90,39,.16);
+  border-color:rgba(86,178,58,.45);
 }
 .service-content h3{
   color:var(--ink);
@@ -984,8 +1102,11 @@ ul{list-style:none}
 .contact-pill{
   margin-top:auto;
   display:flex;
-  flex-direction:column;
-  gap:10px;
+  flex-direction:row;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 .contact-pill a{
   display:inline-flex;
@@ -1131,41 +1252,69 @@ textarea{min-height:150px;resize:vertical}
 .footer{
   background:linear-gradient(180deg, #101010, #0b0b0b);
   color:#fff;
-  padding:56px 0;
-  text-align:center;
+  padding:56px 0 40px;
   border-top:1px solid rgba(255,255,255,.06);
 }
 .footer .container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 20px;
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:24px;
+}
+.footer-main{
+  display:flex;
   align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
 }
 .footer-logo{
-  width:min(260px, 70vw);
+  width:min(220px, 60vw);
   height:auto;
-  margin-bottom:6px;
-  opacity:.95;
+  opacity:.98;
 }
-.footer .container > :first-child{
+.footer-contact{
   display:flex;
-  gap:12px;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+  text-align:left;
+}
+.footer-contact a{
+  display:inline-flex;
   align-items:center;
+  gap:8px;
+  color:#fff;
+  font-weight:700;
 }
-.footer .container > :last-child{
+.footer-note{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
   font-size:.85rem;
-  color:rgba(255,255,255,.5);
+  color:rgba(255,255,255,.6);
+  justify-content:center;
+  text-align:center;
 }
-.footer small{
-  color:rgba(255,255,255,.8);
-  font-size:.9rem;
+.footer-note small{
   display:block;
 }
-.footer small:last-child{
-  font-size:.85rem;
-  color:rgba(255,255,255,.7);
-  margin-top:6px;
-  font-weight:500;
+
+@media (max-width:768px){
+  .footer-main{
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+  }
+  .footer-contact{
+    align-items:center;
+    text-align:center;
+  }
+  .footer-logo{
+    margin:0 auto;
+  }
 }
 
 .map-grid{
@@ -1515,16 +1664,26 @@ textarea{min-height:150px;resize:vertical}
 @media (max-width:980px){
   :root{ --section-y:84px; --grid-gap: 24px; }
 
-  .navbar .container{position:relative}
   .logo{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
+    margin-bottom:-80px;
   }
-  .mobile-toggle{display:flex}
-  .mobile-toggle{margin-left:auto}
+  .logo img{
+    height:165px;
+  }
+
+  .navbar .container{
+    justify-content:center;
+  }
+
+  .mobile-toggle{
+    position:absolute;
+    right:16px;
+    display:flex;
+  }
+  .navbar{
+    padding:calc(8px + env(safe-area-inset-top)) 14px 8px;
+  }
   .nav-cta{display:none}
-  .logo img{height:56px;max-width:280px}
 
   .nav-menu{
     position:fixed;
@@ -1536,17 +1695,32 @@ textarea{min-height:150px;resize:vertical}
     border-left:1px solid rgba(0,0,0,.06);
     box-shadow:-30px 0 90px rgba(0,0,0,.18);
     flex-direction:column;
-    align-items:flex-start;
-    padding:120px 26px 26px;
+    align-items:center;
+    padding:90px 26px 32px;
+    padding-bottom:calc(54px + env(safe-area-inset-bottom,22px));
+    justify-content:flex-start;
     gap:18px;
     transform:translateX(100%);
     transition:transform 0.4s var(--ease);
-    z-index:999;
-    overflow-y:auto;
-    -webkit-overflow-scrolling:touch;
+    z-index:1005;
+    overflow-y:hidden;
+    overscroll-behavior:none;
+    text-align:center;
+  }
+  .nav-menu-logo{
+    margin-top:16px;
+    padding-top:24px;
+    border-top:1px solid rgba(0,0,0,.06);
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+  .nav-menu-logo img{
+    max-width:170px;
+    height:auto;
   }
   .nav-menu.active{transform:translateX(0)}
-  .nav-link{font-size:1.08rem; padding: 12px 4px;}
+  .nav-link{font-size:1.08rem; padding:12px 4px;}
   .nav-menu-close{
     display:inline-flex;
     align-items:center;
@@ -1567,6 +1741,11 @@ textarea{min-height:150px;resize:vertical}
     transform:translateY(-2px);
     box-shadow:0 10px 24px rgba(0,0,0,.14);
     background:#fff;
+  }
+  .nav-menu li{
+    width:100%;
+    display:flex;
+    justify-content:center;
   }
 
   .mobile-cta{
@@ -1620,6 +1799,16 @@ textarea{min-height:150px;resize:vertical}
   html{overflow-x:hidden}
   body{overflow-x:hidden}
   .container{width:100%;box-sizing:border-box}
+
+  .navbar{
+    overflow:visible;
+  }
+  .navbar .container{
+    padding-top:28px;
+    padding-bottom:18px;
+    padding-left:14px;
+    padding-right:14px;
+  }
 
   .hero {
     padding: 80px 0 60px;
@@ -1683,6 +1872,17 @@ textarea{min-height:150px;resize:vertical}
 @media (max-width:520px){
   :root { --grid-gap: 16px; }
   
+  .logo{
+    margin-bottom:-10px;
+  }
+  .logo img{
+    height:122px;
+  }
+
+  .navbar{
+    padding:calc(6px + env(safe-area-inset-top)) 12px 6px;
+  }
+
   .btn{
     width:100%;
     padding: 14px 24px;
@@ -1718,12 +1918,6 @@ textarea{min-height:150px;resize:vertical}
   .nav-menu {
     width: 100%;
   }
-
-  .logo img{
-    height:50px;
-    max-width:74vw;
-  }
-
 
   .section-title {
     margin-bottom: 32px;
@@ -1792,6 +1986,10 @@ textarea{min-height:150px;resize:vertical}
   .float-icon, .pulse {
     animation: none;
   }
+
+  .hero-bg{
+    transform:scale(1.04);
+  }
 }
 </style>
 
@@ -1807,7 +2005,7 @@ textarea{min-height:150px;resize:vertical}
 <nav class="navbar" aria-label="Main">
   <div class="container">
     <a class="logo" href="#home" aria-label="Welly Lawns & Gardens Home">
-      <img src="assets/images/logo.png" alt="Welly Lawns & Gardens Logo">
+      <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens Logo">
     </a>
 
     <ul class="nav-menu" id="nav-menu" aria-label="Primary navigation">
@@ -1816,6 +2014,7 @@ textarea{min-height:150px;resize:vertical}
           <i class="fas fa-xmark" aria-hidden="true"></i>
         </button>
       </li>
+      <li><a class="nav-link" href="#why-us">Why Welly Lawns</a></li>
       <li><a class="nav-link" href="#services">Services</a></li>
       <li><a class="nav-link" href="#testimonials">Reviews</a></li>
       <li><a class="nav-link" href="#contact">Contact</a></li>
@@ -1830,6 +2029,9 @@ textarea{min-height:150px;resize:vertical}
           <i class="fas fa-calendar-check" aria-hidden="true"></i>
           Get a Free Quote
         </a>
+      </li>
+      <li class="nav-menu-logo" aria-hidden="true">
+        <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
       </li>
     </ul>
 
@@ -1860,7 +2062,7 @@ textarea{min-height:150px;resize:vertical}
       <div class="hero-content">
         <div class="hero-badge fade-up">
           <i class="fas fa-leaf" aria-hidden="true"></i>
-          Local • Reliable • Honest — Porirua &amp; Wellington
+          Local • Reliable • Honest — Porirua, Wellington, Lower Hutt &amp; Upper Hutt
         </div>
 
         <h1 class="fade-up delay-1">Outdoor Care You Can <span>Actually Rely On</span></h1>
@@ -1883,77 +2085,11 @@ textarea{min-height:150px;resize:vertical}
     </div>
   </section>
 
-  <section class="section section--light" id="services">
-    <div class="container">
-      <div class="section-title">
-        <div class="eyebrow fade-up"><i class="fas fa-sparkles" aria-hidden="true"></i> Our Services</div>
-        <h2 class="fade-up delay-1">Clear, tidy results — every visit</h2>
-        <p class="fade-up delay-2">Our bread and butter is lawn mowing, but we also keep gardens thriving and hedges looking sharp — with green waste removed.</p>
-      </div>
-
-      <div class="services-grid">
-        <!-- Lawn Mowing -->
-        <article class="service-card fade-up delay-1">
-          <div class="service-image">
-            <img src="assets/images/service-lawn.jpg" alt="Lawn mowing service in Wellington">
-            <div class="service-overlay"></div>
-          </div>
-          <div class="service-content">
-            <h3>Lawn Mowing Wellington</h3>
-            <div class="service-tagline">Clean edges. Even cuts. Tidy finish.</div>
-            <ul class="service-list">
-              <li><i class="fas fa-check" aria-hidden="true"></i> Regular or one-off mowing</li>
-              <li><i class="fas fa-check" aria-hidden="true"></i> Edge trimming included</li>
-              <li><i class="fas fa-check" aria-hidden="true"></i> Clippings removed</li>
-            </ul>
-            <a class="service-cta" href="#quote-form">Get a quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
-
-        <!-- Gardening -->
-        <article class="service-card fade-up delay-2">
-          <div class="service-image">
-            <img src="assets/images/service-gardening.png" alt="Gardening and garden maintenance">
-            <div class="service-overlay"></div>
-          </div>
-          <div class="service-content">
-            <h3>Gardening</h3>
-            <div class="service-tagline">Weeding, pruning, planting &amp; upkeep.</div>
-            <ul class="service-list">
-              <li><i class="fas fa-check" aria-hidden="true"></i> Weeding &amp; pruning</li>
-              <li><i class="fas fa-check" aria-hidden="true"></i> Planting &amp; general tidy-ups</li>
-              <li><i class="fas fa-check" aria-hidden="true"></i> Seasonal clean-ups</li>
-            </ul>
-            <a class="service-cta" href="#quote-form">Get a quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
-
-        <!-- Hedges -->
-        <article class="service-card fade-up delay-3">
-          <div class="service-image">
-            <img src="assets/images/service-hedges.jpg" alt="Hedge trimming service">
-            <div class="service-overlay"></div>
-          </div>
-          <div class="service-content">
-            <h3>Hedge Trimming &amp; Trees</h3>
-            <div class="service-tagline">Neat shapes, healthier growth, less mess.</div>
-            <ul class="service-list">
-              <li><i class="fas fa-check" aria-hidden="true"></i> Hedges of all sizes</li>
-              <li><i class="fas fa-check" aria-hidden="true"></i> Tree work (as needed)</li>
-              <li><i class="fas fa-check" aria-hidden="true"></i> Green waste removal</li>
-            </ul>
-            <a class="service-cta" href="#quote-form">Get a quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="section section--light section--tight" id="why-us">
     <div class="container">
       <div class="section-title">
         <div class="eyebrow fade-up">
-          <i class="fas fa-thumbs-up"></i> Why Choose Us
+          <i class="fas fa-thumbs-up"></i> why welly lawns
         </div>
         <h2 class="fade-up delay-1">Reliable work. No mucking around.</h2>
         <p class="fade-up delay-2">
@@ -1961,7 +2097,7 @@ textarea{min-height:150px;resize:vertical}
         </p>
       </div>
 
-      <div class="services-grid">
+      <div class="services-grid services-grid__main">
         <article class="service-card feature-card fade-up delay-1">
           <div class="service-content">
             <div class="feature-icon">
@@ -2013,6 +2149,184 @@ textarea{min-height:150px;resize:vertical}
     </div>
   </section>
 
+  <section class="section section--light" id="services">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow fade-up"><i class="fas fa-sparkles" aria-hidden="true"></i> Our Services</div>
+        <h2 class="fade-up delay-1">Clear, tidy results — every visit</h2>
+        <p class="fade-up delay-2">Our bread and butter is lawn mowing, but we also keep gardens thriving and hedges looking sharp — with green waste removed.</p>
+      </div>
+
+      <div class="services-grid how-it-works-grid">
+        <!-- Lawn Mowing -->
+        <article class="service-card grass-strip fade-up delay-1">
+          <div class="service-image">
+            <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/759-16879-17198.jpg" alt="Lawn mowing service in Wellington">
+            <div class="service-overlay"></div>
+          </div>
+          <div class="service-content">
+            <h3>Lawn Mowing Wellington</h3>
+            <div class="service-tagline">Clean edges. Even cuts. Tidy finish.</div>
+            <ul class="service-list">
+              <li><i class="fas fa-check" aria-hidden="true"></i> Regular or one-off mowing</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Edge trimming included</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Clippings removed</li>
+            </ul>
+            <a class="service-cta" href="#quote-form">Get a quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+        <!-- Gardening -->
+        <article class="service-card grass-strip fade-up delay-2">
+          <div class="service-image">
+            <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Gardening-Wellylawns.png" alt="Gardening and garden maintenance">
+            <div class="service-overlay"></div>
+          </div>
+          <div class="service-content">
+            <h3>Gardening</h3>
+            <div class="service-tagline">Weeding, pruning, planting &amp; upkeep.</div>
+            <ul class="service-list">
+              <li><i class="fas fa-check" aria-hidden="true"></i> Weeding &amp; pruning</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Planting &amp; general tidy-ups</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Seasonal clean-ups</li>
+            </ul>
+            <a class="service-cta" href="#quote-form">Get a quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+      <!-- Hedges -->
+      <article class="service-card grass-strip fade-up delay-3">
+        <div class="service-image">
+          <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Hedges-Wellylawns.jpg" alt="Hedge trimming service">
+          <div class="service-overlay"></div>
+        </div>
+        <div class="service-content">
+          <h3>Hedge Trimming &amp; Trees</h3>
+          <div class="service-tagline">Neat shapes, healthier growth, less mess.</div>
+          <ul class="service-list">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Hedges of all sizes</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Tree work (as needed)</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Green waste removal</li>
+          </ul>
+          <a class="service-cta" href="#quote-form">Get a quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <article class="service-card grass-strip fade-up delay-4">
+        <div class="service-image">
+          <img src="https://www.groundsguys.com/us/en-us/grounds-guys/_assets/images/guy-grassclipping.webp" alt="Green waste and rubbish removal service">
+          <div class="service-overlay"></div>
+        </div>
+        <div class="service-content">
+          <h3>Green Waste &amp; Rubbish Removal</h3>
+          <div class="service-tagline">Trailers cleared, cuttings gone.</div>
+          <ul class="service-list">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Compostable clippings sorted and hauled</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Full rubbish removal with tidy leave-behind</li>
+          </ul>
+          <a class="service-cta" href="#quote-form">Request a pickup <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <article class="service-card grass-strip fade-up delay-5">
+        <div class="service-image">
+          <img src="https://washh.com/wp-content/uploads/2019/03/roof-pressure-washing.jpg" alt="Roof cleaning team rinsing a roof">
+          <div class="service-overlay"></div>
+        </div>
+        <div class="service-content">
+          <h3>Roof Washing</h3>
+          <div class="service-tagline">Moss, dirt and mould cleared safely.</div>
+          <ul class="service-list">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Pressure rinse for tile, metal and asphalt</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Soft brushing where needed to protect coatings</li>
+          </ul>
+          <a class="service-cta" href="#quote-form">Book a roof wash <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <article class="service-card grass-strip fade-up delay-6">
+        <div class="service-image">
+          <img src="https://lirp.cdn-website.com/cfa81759/dms3rep/multi/opt/roof-scrape-pricing-640w.jpg" alt="Roof treatments and sealing service">
+          <div class="service-overlay"></div>
+        </div>
+        <div class="service-content">
+          <h3>Roof Treatment</h3>
+          <div class="service-tagline">Sealants that protect and extend life.</div>
+          <ul class="service-list">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Protective coating for tiles, metal and shingles</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> UV and moisture blockers for lasting results</li>
+          </ul>
+          <a class="service-cta" href="#quote-form">Arrange treatment <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <article class="service-card grass-strip fade-up delay-7">
+        <div class="service-image">
+          <img src="https://pressureandsteam.com.au/wp-content/uploads/2019/01/homehaus.jpg" alt="Exterior house washing">
+          <div class="service-overlay"></div>
+        </div>
+        <div class="service-content">
+          <h3>Exterior House Wash</h3>
+          <div class="service-tagline">Cladding, weatherboards and decks gleam.</div>
+          <ul class="service-list">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Soft wash for weatherboards, stucco and timber</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Protective rinse to keep surfaces clean longer</li>
+          </ul>
+          <a class="service-cta" href="#quote-form">Freshen the exterior <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <article class="service-card grass-strip fade-up delay-8">
+        <div class="service-image">
+          <img src="https://prowaterblasting.co.nz/wp-content/uploads/2021/05/IMG_Gutter-Cleaning.jpg" alt="Gutter cleaning maintenance">
+          <div class="service-overlay"></div>
+        </div>
+        <div class="service-content">
+          <h3>Gutter Cleaning</h3>
+          <div class="service-tagline">Clear debris, funnels working again.</div>
+          <ul class="service-list">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Leaves and grime removed, downpipes flushed</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Early warning on leaks or damage</li>
+          </ul>
+          <a class="service-cta" href="#quote-form">Schedule gutter care <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <article class="service-card grass-strip fade-up delay-9">
+        <div class="service-image">
+          <img src="https://greenacreslandscapeinc.com/wp-content/uploads/2017/07/power-washing.jpg" alt="Pressure washing a driveway">
+          <div class="service-overlay"></div>
+        </div>
+        <div class="service-content">
+          <h3>Pressure Washing</h3>
+          <div class="service-tagline">Paths, driveways and fences restored.</div>
+          <ul class="service-list">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Hard surfaces stripped of mildew and grime</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Eco-friendly detergents rinse clean</li>
+          </ul>
+          <a class="service-cta" href="#quote-form">Power clean surfaces <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+      </div>
+
+      <div class="section-footer fade-up delay-5">
+        <div class="section-footer-inner">
+          <img class="section-footer-logo" src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
+          <div class="section-footer-details">
+            <a href="tel:02041230001" aria-label="Call 0204 123 0001">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              0204 123 0001
+            </a>
+            <a href="mailto:wellylawns@gmail.com" aria-label="Email wellylawns@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              wellylawns@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section--light section--tight" aria-label="About the owner">
     <div class="container">
       <div class="section-title">
@@ -2035,8 +2349,8 @@ textarea{min-height:150px;resize:vertical}
           <div class="about-card-icon">
             <i class="fas fa-map-pin"></i>
           </div>
-          <h3>Based in Porirua</h3>
-          <p>Working across Porirua &amp; Greater Wellington with deep local knowledge and fast response times.</p>
+          <h3>Based in Wellington</h3>
+          <p>Serving the Wellington region — Porirua, Lower Hutt, Upper Hutt &amp; Wellington City — with local knowledge and fast responses.</p>
         </div>
 
         <div class="about-card">
@@ -2055,7 +2369,7 @@ textarea{min-height:150px;resize:vertical}
       <div class="section-title">
         <div class="eyebrow fade-up"><i class="fas fa-star" aria-hidden="true"></i> Reviews</div>
         <h2 class="fade-up delay-1">What locals say</h2>
-        <p class="fade-up delay-2">Short, honest feedback from people around Porirua &amp; Wellington.</p>
+        <p class="fade-up delay-2">Short, honest feedback from people around Porirua, Wellington, Lower Hutt &amp; Upper Hutt.</p>
       </div>
 
       <div class="testimonial-grid">
@@ -2081,6 +2395,21 @@ textarea{min-height:150px;resize:vertical}
         </article>
       </div>
 
+      <div class="section-footer fade-up delay-4">
+        <div class="section-footer-inner">
+          <img class="section-footer-logo" src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
+          <div class="section-footer-details">
+            <a href="tel:02041230001" aria-label="Call 0204 123 0001">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              0204 123 0001
+            </a>
+            <a href="mailto:wellylawns@gmail.com" aria-label="Email wellylawns@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              wellylawns@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2093,7 +2422,7 @@ textarea{min-height:150px;resize:vertical}
         <h2 class="fade-up delay-1">Simple from start to finish</h2>
       </div>
 
-      <div class="services-grid">
+      <div class="services-grid how-it-works-grid">
         <article class="service-card feature-card step-card slide-right delay-1">
           <div class="service-content">
             <span class="step-badge">1</span>
@@ -2163,6 +2492,16 @@ textarea{min-height:150px;resize:vertical}
       <div class="contact-grid">
         <aside class="contact-card promise-card fade-up delay-1">
           <h2>Our Promise</h2>
+          <div class="contact-pill" style="margin-top:18px">
+            <a href="tel:02041230001" aria-label="Call 0204 123 0001">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <strong>0204 123 0001</strong>
+            </a>
+            <a href="mailto:wellylawns@gmail.com" aria-label="Email wellylawns@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <strong>wellylawns@gmail.com</strong>
+            </a>
+          </div>
           <p>
             If you’re not happy with the job, tell us — we’ll fix it.
             No arguments. No stress.
@@ -2170,19 +2509,13 @@ textarea{min-height:150px;resize:vertical}
           <p>
             Most quotes are answered within one business day.
           </p>
-
-          <div class="contact-pill" style="margin-top:18px">
-            <a href="mailto:wellylawns@gmail.com" aria-label="Email wellylawns@gmail.com">
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-              <strong>wellylawns@gmail.com</strong>
-            </a>
-          </div>
         </aside>
 
         <!-- Contact form -->
         <form class="contact-form fade-up delay-2" id="quote-form" action="https://formsubmit.co/samuelhowell247@gmail.com" method="POST">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_cc" value="logan@emporom.org">
+          <input type="hidden" name="_cc" value="wellylawns@gmail.com">
           <div class="form-row">
             <div class="field">
               <label for="name">Name</label>
@@ -2271,6 +2604,22 @@ textarea{min-height:150px;resize:vertical}
           </button>
         </form>
       </div>
+
+      <div class="section-footer fade-up delay-3">
+        <div class="section-footer-inner">
+          <img class="section-footer-logo" src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
+          <div class="section-footer-details">
+            <a href="tel:02041230001" aria-label="Call 0204 123 0001">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              0204 123 0001
+            </a>
+            <a href="mailto:wellylawns@gmail.com" aria-label="Email wellylawns@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              wellylawns@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2329,13 +2678,21 @@ textarea{min-height:150px;resize:vertical}
 
 <footer class="footer">
   <div class="container">
-    <img class="footer-logo" src="assets/images/logo.png" alt="Welly Lawns & Gardens logo">
-    <small>© 2025 Welly Lawns &amp; Gardens — Porirua &amp; Wellington</small>
-    <small>Built by Emporom Digital Marketing</small>
+    <div class="footer-main">
+      <img class="footer-logo" src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
+      <div class="footer-contact">
+        <a href="tel:02041230001"><i class="fas fa-phone"></i> 0204 123 0001</a>
+        <a href="mailto:wellylawns@gmail.com"><i class="fas fa-envelope"></i> wellylawns@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-note">
+      <small>© 2025 Welly Lawns &amp; Gardens — Porirua, Wellington, Lower Hutt &amp; Upper Hutt</small>
+      <small>Built by Emporom Digital Marketing</small>
+    </div>
   </div>
 </footer>
 
-<div class="sticky-cta" aria-label="Quick contact bar">
+<div class="sticky-cta grass-strip" aria-label="Quick contact bar">
   <div class="sticky-cta-text">
     Need a quick quote?
   </div>
@@ -2357,7 +2714,10 @@ textarea{min-height:150px;resize:vertical}
     backdrop.classList.toggle('active', open);
     toggle.classList.toggle('active', open);
     toggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
     document.body.style.overflow = open ? 'hidden' : '';
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    document.documentElement.style.height = open ? '100vh' : '';
   }
 
   toggle.addEventListener('click', () => {
@@ -2408,11 +2768,22 @@ textarea{min-height:150px;resize:vertical}
   // ==========================================
   const heroBg = document.querySelector('.hero-bg');
   if (heroBg) {
+    let ticking = false;
+
+    const updateHeroBg = () => {
+      const scrollY = window.scrollY || 0;
+      const offset = scrollY * 0.3;
+      heroBg.style.transform = `translate3d(0, ${offset}px, 0) scale(1.04)`;
+      ticking = false;
+    };
+
+    updateHeroBg();
     window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const offset = scrollY * 0.5;
-      heroBg.style.transform = `scale(1.04) translateY(${offset}px)`;
-    });
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeroBg);
+        ticking = true;
+      }
+    }, { passive: true });
   }
  
   // ==========================================
