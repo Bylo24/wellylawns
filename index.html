@@ -12,7 +12,7 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Welly Lawns & Gardens",
-  "image": "https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png",
+  "image": "assets/images/logo.png",
   "telephone": "+642041230001",
   "email": "wellylawns@gmail.com",
   "areaServed": "Porirua, Wellington, Lower Hutt, Upper Hutt",
@@ -64,6 +64,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
 
 <style>
 /* =========================
@@ -625,7 +628,7 @@ ul{list-style:none}
 .hero-bg{
   position:absolute;
   inset:0;
-  background:url("https://wellylawns.co.nz/wp-content/uploads/2025/05/Wellylawns-Hero-Image.jpg") center/cover no-repeat;
+  background:url("assets/images/hero.jpg") center/cover no-repeat;
   transform:scale(1.04);
   will-change: transform;
   backface-visibility:hidden;
@@ -771,7 +774,7 @@ ul{list-style:none}
   left:0;
   right:0;
   height:26px;
-  background-image:url("https://cdn.creazilla.com/cliparts/63893/grass-clipart-lg.png");
+  background-image:url("assets/images/grass-clipart.png");
   background-repeat:repeat-x;
   background-position:left bottom;
   background-size:auto 26px;
@@ -1300,6 +1303,16 @@ textarea{min-height:150px;resize:vertical}
 }
 .footer-note small{
   display:block;
+}
+.footer-credit a{
+  color:rgba(255,255,255,.7);
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.8rem;
+  transition:color var(--transition);
+}
+.footer-credit a:hover{
+  color:#fff;
 }
 
 @media (max-width:768px){
@@ -2005,7 +2018,7 @@ textarea{min-height:150px;resize:vertical}
 <nav class="navbar" aria-label="Main">
   <div class="container">
     <a class="logo" href="#home" aria-label="Welly Lawns & Gardens Home">
-      <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens Logo">
+      <img src="assets/images/logo.png" alt="Welly Lawns & Gardens Logo">
     </a>
 
     <ul class="nav-menu" id="nav-menu" aria-label="Primary navigation">
@@ -2031,7 +2044,7 @@ textarea{min-height:150px;resize:vertical}
         </a>
       </li>
       <li class="nav-menu-logo" aria-hidden="true">
-        <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
+        <img src="assets/images/logo.png" alt="Welly Lawns & Gardens logo">
       </li>
     </ul>
 
@@ -2161,7 +2174,7 @@ textarea{min-height:150px;resize:vertical}
         <!-- Lawn Mowing -->
         <article class="service-card grass-strip fade-up delay-1">
           <div class="service-image">
-            <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/759-16879-17198.jpg" alt="Lawn mowing service in Wellington">
+            <img src="assets/images/service-lawn.jpg" alt="Lawn mowing service in Wellington">
             <div class="service-overlay"></div>
           </div>
           <div class="service-content">
@@ -2179,7 +2192,7 @@ textarea{min-height:150px;resize:vertical}
         <!-- Gardening -->
         <article class="service-card grass-strip fade-up delay-2">
           <div class="service-image">
-            <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Gardening-Wellylawns.png" alt="Gardening and garden maintenance">
+            <img src="assets/images/service-gardening.png" alt="Gardening and garden maintenance">
             <div class="service-overlay"></div>
           </div>
           <div class="service-content">
@@ -2197,7 +2210,7 @@ textarea{min-height:150px;resize:vertical}
       <!-- Hedges -->
       <article class="service-card grass-strip fade-up delay-3">
         <div class="service-image">
-          <img src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Hedges-Wellylawns.jpg" alt="Hedge trimming service">
+          <img src="assets/images/service-hedges.jpg" alt="Hedge trimming service">
           <div class="service-overlay"></div>
         </div>
         <div class="service-content">
@@ -2214,7 +2227,7 @@ textarea{min-height:150px;resize:vertical}
 
       <article class="service-card grass-strip fade-up delay-4">
         <div class="service-image">
-          <img src="https://www.groundsguys.com/us/en-us/grounds-guys/_assets/images/guy-grassclipping.webp" alt="Green waste and rubbish removal service">
+          <img src="assets/images/service-green-waste.webp" alt="Green waste and rubbish removal service">
           <div class="service-overlay"></div>
         </div>
         <div class="service-content">
@@ -2230,7 +2243,7 @@ textarea{min-height:150px;resize:vertical}
 
       <article class="service-card grass-strip fade-up delay-5">
         <div class="service-image">
-          <img src="https://washh.com/wp-content/uploads/2019/03/roof-pressure-washing.jpg" alt="Roof cleaning team rinsing a roof">
+          <img src="assets/images/service-roof-wash.jpg" alt="Roof cleaning team rinsing a roof">
           <div class="service-overlay"></div>
         </div>
         <div class="service-content">
@@ -2246,7 +2259,7 @@ textarea{min-height:150px;resize:vertical}
 
       <article class="service-card grass-strip fade-up delay-6">
         <div class="service-image">
-          <img src="https://lirp.cdn-website.com/cfa81759/dms3rep/multi/opt/roof-scrape-pricing-640w.jpg" alt="Roof treatments and sealing service">
+          <img src="assets/images/service-roof-treatment.jpg" alt="Roof treatments and sealing service">
           <div class="service-overlay"></div>
         </div>
         <div class="service-content">
@@ -2262,7 +2275,7 @@ textarea{min-height:150px;resize:vertical}
 
       <article class="service-card grass-strip fade-up delay-7">
         <div class="service-image">
-          <img src="https://pressureandsteam.com.au/wp-content/uploads/2019/01/homehaus.jpg" alt="Exterior house washing">
+          <img src="assets/images/service-house-wash.jpg" alt="Exterior house washing">
           <div class="service-overlay"></div>
         </div>
         <div class="service-content">
@@ -2278,7 +2291,7 @@ textarea{min-height:150px;resize:vertical}
 
       <article class="service-card grass-strip fade-up delay-8">
         <div class="service-image">
-          <img src="https://prowaterblasting.co.nz/wp-content/uploads/2021/05/IMG_Gutter-Cleaning.jpg" alt="Gutter cleaning maintenance">
+          <img src="assets/images/service-gutter.jpg" alt="Gutter cleaning maintenance">
           <div class="service-overlay"></div>
         </div>
         <div class="service-content">
@@ -2294,7 +2307,7 @@ textarea{min-height:150px;resize:vertical}
 
       <article class="service-card grass-strip fade-up delay-9">
         <div class="service-image">
-          <img src="https://greenacreslandscapeinc.com/wp-content/uploads/2017/07/power-washing.jpg" alt="Pressure washing a driveway">
+          <img src="assets/images/service-pressure-wash.jpg" alt="Pressure washing a driveway">
           <div class="service-overlay"></div>
         </div>
         <div class="service-content">
@@ -2311,7 +2324,7 @@ textarea{min-height:150px;resize:vertical}
 
       <div class="section-footer fade-up delay-5">
         <div class="section-footer-inner">
-          <img class="section-footer-logo" src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
+          <img class="section-footer-logo" src="assets/images/logo.png" alt="Welly Lawns & Gardens logo">
           <div class="section-footer-details">
             <a href="tel:02041230001" aria-label="Call 0204 123 0001">
               <i class="fas fa-phone" aria-hidden="true"></i>
@@ -2397,7 +2410,7 @@ textarea{min-height:150px;resize:vertical}
 
       <div class="section-footer fade-up delay-4">
         <div class="section-footer-inner">
-          <img class="section-footer-logo" src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
+          <img class="section-footer-logo" src="assets/images/logo.png" alt="Welly Lawns & Gardens logo">
           <div class="section-footer-details">
             <a href="tel:02041230001" aria-label="Call 0204 123 0001">
               <i class="fas fa-phone" aria-hidden="true"></i>
@@ -2607,7 +2620,7 @@ textarea{min-height:150px;resize:vertical}
 
       <div class="section-footer fade-up delay-3">
         <div class="section-footer-inner">
-          <img class="section-footer-logo" src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
+          <img class="section-footer-logo" src="assets/images/logo.png" alt="Welly Lawns & Gardens logo">
           <div class="section-footer-details">
             <a href="tel:02041230001" aria-label="Call 0204 123 0001">
               <i class="fas fa-phone" aria-hidden="true"></i>
@@ -2679,7 +2692,7 @@ textarea{min-height:150px;resize:vertical}
 <footer class="footer">
   <div class="container">
     <div class="footer-main">
-      <img class="footer-logo" src="https://wellylawns.co.nz/wp-content/uploads/2025/05/Logos-26-1.png" alt="Welly Lawns & Gardens logo">
+    <img class="footer-logo" src="assets/images/logo.png" alt="Welly Lawns & Gardens logo">
       <div class="footer-contact">
         <a href="tel:02041230001"><i class="fas fa-phone"></i> 0204 123 0001</a>
         <a href="mailto:wellylawns@gmail.com"><i class="fas fa-envelope"></i> wellylawns@gmail.com</a>
@@ -2688,6 +2701,9 @@ textarea{min-height:150px;resize:vertical}
     <div class="footer-note">
       <small>© 2025 Welly Lawns &amp; Gardens — Porirua, Wellington, Lower Hutt &amp; Upper Hutt</small>
       <small>Built by Emporom Digital Marketing</small>
+      <small class="footer-credit">
+        <a href="https://emporom.media" target="_blank" rel="noopener">Built By Emporom Media</a>
+      </small>
     </div>
   </div>
 </footer>
