@@ -2884,5 +2884,20 @@ textarea{min-height:150px;resize:vertical}
   }
 </script>
 
+<script>
+  (function() {
+    const form = document.getElementById('quote-form');
+    if (!form || typeof gtag !== 'function') return;
+    form.addEventListener('submit', () => {
+      gtag('event', 'conversion', {
+        send_to: 'AW-17282615418/YOUR_LABEL',
+        value: 1.0,
+        currency: 'NZD',
+        transaction_id: Date.now().toString()
+      });
+    });
+  })();
+</script>
+
 </body>
 </html>
